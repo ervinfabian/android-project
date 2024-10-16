@@ -1,4 +1,5 @@
 import java.util.*
+import kotlin.random.Random
 
 fun main() {
     val a = 2 //egyszer kap erteket
@@ -61,15 +62,69 @@ fun main() {
     numbers.map {it * 2}.forEach{
         println(it)
     }
-    print("capitalizing")
-    daysOfWeek.map {it.}
+    println()
+    println("capitalizing")
+    daysOfWeek.map {it.uppercase()}.forEach{
+        println(it)
+    }
+    println()
+    println("first character")
+    daysOfWeek.map {it.first().lowercase()}.forEach{
+        println(it)
+    }
+    println()
+    println("length")
+    daysOfWeek.map {it.length}.forEach{
+        println(it)
+    }
+    println()
+    println("average length")
+    val length = daysOfWeek.map { it.length }
+    val averageLength = length.average()
+    println(averageLength)  
+    println("-----------------------------------------")
+    //hetedik feladat
+    println()
+    println("Hetedik feladat")
+    println()
+    var mutableDaysOfWeek = daysOfWeek.toMutableList()
+    mutableDaysOfWeek.removeAll { it.contains('n', ignoreCase = true)}
+    println(mutableDaysOfWeek)
+    println()
+    mutableDaysOfWeek.withIndex().forEach { (index, day) -> 
+    	println("Item at $index is $day")
+    }
+    println()
+    mutableDaysOfWeek.sort()
+    println(mutableDaysOfWeek)
+    println("-----------------------------------------")
+    //nyolcadik feladat
+    println()
+    println("nyolcadik feladat")
+    println()
+    println("Array")
+    var randomArray = Array(10) {Random.nextInt(0, 101)}
+    randomArray.forEach { println(it) }
+    println()
+    println("Sorted")
+    var sortedArray = randomArray.sorted()
+    sortedArray.forEach { println(it) }
+    println()
+    var containsEven = randomArray.any { it % 2 == 0 }
+    println("Contains even: $containsEven")
+    println()
+    var allEven = randomArray.all { it % 2 == 0 }
+    println("All are even: $allEven")
+    println()
+    var average = randomArray.average()
+    println("the average: $average")
     
     
     
 }
 
 fun isPrime(number: Int): Boolean {
-    if ( number &lt; 2 ) return false
+    if ( number < 2 ) return false
     for (i in 2..number / 2){
         if ( number % i == 0 ){
             return false
@@ -88,7 +143,7 @@ fun decodeMessage (encodedMessage: String): String{
     return String(Base64.getDecoder().decode(encodedMessage))
 }
 
-fun messageCoding(msg: String, func: (String) -&gt; String): String{
+fun messageCoding(msg: String, func: (String) -> String): String{
     return func(msg)
 }
 
