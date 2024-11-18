@@ -23,4 +23,5 @@ fun RecipeDTO.toModel(): RecipeModel {
         name = this.name,
         description = this.description,
         thumbnailUrl = this.thumbnailUrl,
+    )
 }

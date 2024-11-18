@@ -7,4 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
+
+    <TextView
+        android:id="@+id/textViewMain"
+        android:layout_width="309dp"
+        android:layout_height="238dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382" />
 </androidx.constraintlayout.widget.ConstraintLayout>
