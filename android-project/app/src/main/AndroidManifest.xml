@@ -27,7 +27,12 @@
             android:name=".activity.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.RecipesApp" />
+            android:theme="@style/Theme.RecipesApp" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
