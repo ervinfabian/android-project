@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
         Log.d(TAG, "onCreate: SplashActivity created.")
         var binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val SPLASH_TIME_OUT: Long = 3000
+        val SPLASH_TIME_OUT: Long = 10000
 //
 //        binding.buttonSplash.setOnClickListener {
 //            val message = binding.editTextSplash.text.toString() // Get input text

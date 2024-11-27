@@ -75,9 +75,9 @@ class ProfileFragment : Fragment() {
 //            //
     }
 
-    viewModel.deleteResult.observe(viewLifecycleOwner) {
-        if (it) {
-            Toast.makeText(context, "Recipe removed SUCCESSFULLY", )
-        }
-    }
+//    viewModel.deleteResult.observe(viewLifecycleOwner) {
+//        if (it) {
+//            Toast.makeText(context, "Recipe removed SUCCESSFULLY", )
+//        }
+//    }
 }
