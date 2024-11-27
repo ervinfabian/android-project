@@ -50,6 +50,10 @@ android {
     }
 }
 
+
+
+
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -73,5 +77,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
-
+    //implementation("com.google.android.material","material","1.13.0-alpha05")
+    implementation(libs.material.v1130alpha05)
 }

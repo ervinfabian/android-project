@@ -7,7 +7,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.tasty.recipesapp.R
 import android.util.Log
+import androidx.navigation.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tasty.recipesapp.databinding.ActivityMainBinding
+import androidx.fragment.app.Fragment
+
 
 // a containerbe betoltom a fragmenteket
 // a graphot ossze kell kossem a graphhal ami navigal
@@ -28,7 +32,17 @@ class MainActivity : AppCompatActivity() {
         var binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Retrieve the message from the Intent
+        //val navView: BottomNavigationView = binding.navView
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+
+
+
+
+
+
+
+    //    Retrieve the message from the Intent
 //        val message = intent.getStringExtra("message")
 //        binding.textViewMain.text = message // Display the message
 
@@ -62,5 +76,12 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG, "onDestroy: MainActivity destroyed.")
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.nav_host_fragment_activity_main, fragment)
+        transaction.commit()
     }
 }
