@@ -7,10 +7,18 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.tasty.recipesapp.R
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tasty.recipesapp.databinding.ActivityMainBinding
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.navigation.NavigationView
 
 
 // a containerbe betoltom a fragmenteket
@@ -21,32 +29,55 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
-//        setContentView(R.layout.activity_main)
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
-
+        enableEdgeToEdge()
         var binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        binding.bottomNavigation.setupWithNavController(navController)
+
+//        val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.recipesFragment, R.id.profileFragment))
+//        setupActionBarWithNavController(navController, appBarConfiguration)
+
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
         //val navView: BottomNavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-
-
-
-
-
-
-
-
+//        val navController = findNavController(R.id.nav_host_fragment)
+//        val navView: BottomNavigationView = binding.bottomNavigation
+//        navView.setupWithNavController(navController)
     //    Retrieve the message from the Intent
 //        val message = intent.getStringExtra("message")
 //        binding.textViewMain.text = message // Display the message
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.app_menu, menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        val navGraph = navController.graph
+
+        // Find the action ID corresponding to the selected menu item
+        val actionId = navGraph.findNode(item.itemId)?.id
+
+        return if (actionId != null) {
+            navController.navigate(actionId)
+            true
+        } else {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+
+
 
     override fun onStart() {
         super.onStart()
@@ -78,10 +109,10 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onDestroy: MainActivity destroyed.")
     }
 
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val transaction = fragmentManager.beginTransaction()
-        transaction.replace(R.id.nav_host_fragment_activity_main, fragment)
-        transaction.commit()
-    }
+//    private fun replaceFragment(fragment: Fragment) {
+//        val fragmentManager = supportFragmentManager
+//        val transaction = fragmentManager.beginTransaction()
+//        transaction.replace(R.id.nav_host_fragment, fragment)
+//        transaction.commit()
+//    }
 }
