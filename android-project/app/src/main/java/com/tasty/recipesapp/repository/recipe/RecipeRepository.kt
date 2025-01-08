@@ -7,6 +7,7 @@ import com.tasty.recipesapp.repository.recipe.model.RecipeDTO
 import com.tasty.recipesapp.repository.recipe.model.RecipeModel
 import com.tasty.recipesapp.repository.recipe.model.toModel
 import java.io.IOException
+import com.google.gson.Gson
 
 // ebbe kell a gson-os cucc
 class RecipeRepository {
@@ -26,7 +27,7 @@ class RecipeRepository {
     }
 
     val type = object : TypeToken<List<RecipeDTO>>() {}.type
-    val recipesDTOList: List<RecipeDTO> = Gson().fromJson(jsonString, type)
+    val recipesDTOList: List<RecipeDTO> = gson().fromJson(jsonString, type)
 
     val recipesList = recipesDTOList.toModelList()
     return recipesList
@@ -50,7 +51,7 @@ fun getRecipesFromJson(context: Context): List<RecipeModel> {
     }
 
     val type = object : TypeToken<List<RecipeDTO>>() {}.type
-    val recipesDTOList: List<RecipeDTO> = Gson().fromJson(jsonString, type)
+    val recipesDTOList: List<RecipeDTO> = gson().fromJson(jsonString, type)
 
     val recipesList = recipesDTOList.toModelList()
     return recipesList
