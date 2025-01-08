@@ -27,7 +27,7 @@ class RecipeRepository {
     }
 
     val type = object : TypeToken<List<RecipeDTO>>() {}.type
-    val recipesDTOList: List<RecipeDTO> = gson().fromJson(jsonString, type)
+    val recipesDTOList: List<RecipeDTO> = Gson().fromJson(jsonString, type)
 
     val recipesList = recipesDTOList.toModelList()
     return recipesList
@@ -39,6 +39,8 @@ class RecipeRepository {
 }
 
 fun getRecipesFromJson(context: Context): List<RecipeModel> {
+
+    val TAG = "RecipeRepository"
     lateinit var jsonString: String
     try {
         jsonString =
@@ -51,7 +53,7 @@ fun getRecipesFromJson(context: Context): List<RecipeModel> {
     }
 
     val type = object : TypeToken<List<RecipeDTO>>() {}.type
-    val recipesDTOList: List<RecipeDTO> = gson().fromJson(jsonString, type)
+    val recipesDTOList: List<RecipeDTO> = Gson().fromJson(jsonString, type)
 
     val recipesList = recipesDTOList.toModelList()
     return recipesList

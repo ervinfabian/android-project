@@ -10,12 +10,10 @@ class RecipeListViewModel() : ViewModel()  {
 
 
     // Live data class member
-//    var recipesList: MutableLiveData<List<RecipeModel>> = MutableLiveData()
-//
-//    private val repository: RecipeRepository = RecipeRepository()
-//
-//    fun fetchRecipesFromJson(context: Context) {
-//        val recipes = repository.getRecipesFromJson(context)
-//        recipesList.value = recipes
-//    }
+    var recipesList: MutableLiveData<List<RecipeModel>> = MutableLiveData()
+    private val repository: RecipeRepository = RecipeRepository()
+    fun fetchRecipesFromJson(context: Context) {
+        val recipes = repository.getRecipesFromJson(context)
+        recipesList.value = recipes
+    }
 }

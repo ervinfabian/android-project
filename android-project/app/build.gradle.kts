@@ -80,6 +80,6 @@ dependencies {
     implementation(libs.androidx.navigation.ui)
     //implementation("com.google.android.material","material","1.13.0-alpha05")
     implementation(libs.material.v1130alpha05)
-    implementation(libs.gson)
+    implementation("com.google.code.gson:gson:2.10.1")
 
 }
