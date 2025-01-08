@@ -3,11 +3,11 @@ package com.tasty.recipesapp.repository.recipe
 import android.content.Context
 import android.util.Log
 import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken
-import com.google.gson.Gson
 import com.tasty.recipesapp.repository.recipe.model.RecipeDTO
 import com.tasty.recipesapp.repository.recipe.model.RecipeModel
 import com.tasty.recipesapp.repository.recipe.model.toModel
 import java.io.IOException
+import com.google.gson.Gson
 
 // ebbe kell a gson-os cucc
 class RecipeRepository {
@@ -39,8 +39,6 @@ class RecipeRepository {
 }
 
 fun getRecipesFromJson(context: Context): List<RecipeModel> {
-    val TAG = "RecipeRepository"
-
     lateinit var jsonString: String
     try {
         jsonString =
