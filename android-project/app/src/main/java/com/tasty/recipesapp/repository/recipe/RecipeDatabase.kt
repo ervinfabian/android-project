@@ -21,6 +21,7 @@ abstract class RecipeDatabase : RoomDatabase() {
                 Log.d("com.tasty.recipeapp", "Creating new database instance")
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
+
                     RecipeDatabase::class.java,
                     "recipe_database"
                 )
