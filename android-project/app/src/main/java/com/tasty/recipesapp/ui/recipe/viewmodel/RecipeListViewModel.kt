@@ -14,6 +14,7 @@ class RecipeListViewModel() : ViewModel()  {
     private val repository: RecipeRepository = RecipeRepository()
     fun fetchRecipesFromJson(context: Context) {
         val recipes = repository.getRecipesFromJson(context)
+
         recipesList.value = recipes
     }
 }
