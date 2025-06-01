@@ -10,22 +10,16 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.findNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tasty.recipesapp.databinding.ActivityMainBinding
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.navigation.NavigationView
 
 
 // a containerbe betoltom a fragmenteket
 // a graphot ossze kell kossem a graphhal ami navigal
 class MainActivity : AppCompatActivity() {
 
-    private val TAG = "MainActivity"
+    private val tag = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,32 +75,32 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        Log.d(TAG, "onStart: MainActivity started.")
+        Log.d(tag, "onStart: MainActivity started.")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d(TAG, "onResume: MainActivity resumed.")
+        Log.d(tag, "onResume: MainActivity resumed.")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d(TAG, "onPause: MainActivity paused.")
+        Log.d(tag, "onPause: MainActivity paused.")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG, "onStop: MainActivity stopped.")
+        Log.d(tag, "onStop: MainActivity stopped.")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.d(TAG, "onRestart: MainActivity restarted.")
+        Log.d(tag, "onRestart: MainActivity restarted.")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, "onDestroy: MainActivity destroyed.")
+        Log.d(tag, "onDestroy: MainActivity destroyed.")
     }
 
 //    private fun replaceFragment(fragment: Fragment) {

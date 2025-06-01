@@ -3,8 +3,8 @@ package com.tasty.recipesapp.api
 
 
 import com.tasty.recipesapp.repository.recipe.model.RecipeDTO
-import com.tasty.recipesapp.model.RecipeResponse
-import com.tasty.recipesapp.model.SingleRecipeResponse
+//import com.tasty.recipesapp.model.RecipeResponse
+//import com.tasty.recipesapp.model.SingleRecipeResponse
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET

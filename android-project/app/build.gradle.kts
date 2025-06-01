@@ -1,6 +1,7 @@
-plugins {
+ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+//    alias(libs.plugins.jetbrains.compose)
 }
 
 android {
@@ -50,7 +51,11 @@ android {
     }
 }
 
-
+configurations.all {
+    resolutionStrategy {
+        force(libs.jetbrains.kotlin.stdlib)
+    }
+}
 
 
 
@@ -84,5 +89,6 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation(libs.jetbrains.kotlin.stdlib)
 
 }
