@@ -1,9 +1,6 @@
 package com.tasty.recipesapp.api
 
 import android.util.Log
-import com.tasty.recipesapp.api.ApiRecipeDTO
-import com.tasty.recipesapp.api.RecipeService
-//import com.tasty.recipesapp.auth.manager.TokenManager
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

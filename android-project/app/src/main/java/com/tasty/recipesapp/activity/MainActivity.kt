@@ -41,13 +41,6 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        //val navView: BottomNavigationView = binding.navView
-//        val navController = findNavController(R.id.nav_host_fragment)
-//        val navView: BottomNavigationView = binding.bottomNavigation
-//        navView.setupWithNavController(navController)
-    //    Retrieve the message from the Intent
-//        val message = intent.getStringExtra("message")
-//        binding.textViewMain.text = message // Display the message
 
     }
 
